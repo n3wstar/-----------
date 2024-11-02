@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react'
+import TaskBoard from './components/TaskBoard';
 import './App.css'
+import logo from './assets/logo.svg';
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+const App: React.FC = () => {
+  return(
+    <div className="App">
+      <header className="header">
+        <nav>
+          <div className="logo">
+            <img src={logo} alt="BrainStorm Logo" className="logo-image"></img>
+            BrainStorm
+          </div>
+          <div className="auth">
+            <button>Вход</button>
+            <button>Регистрация</button>
+          </div>
+        </nav>
+      </header>
+      <div className="header-line"></div>
+      <main>
+        <section className="hero">
+          <h1>Удобное добавление задач</h1>
+          <p>Все, что нужно для успешной работы</p>
+          <button>Начать сейчас</button>
+        </section>
+        <TaskBoard />
+      </main>
+      <footer>
+        <p>Политика конфиденциальности</p>
+        <p>Соглашение на обработку персональных данных</p>
+      </footer>
+    </div>
+  );
 }
 
 export default App
