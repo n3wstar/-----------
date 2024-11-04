@@ -27,9 +27,13 @@ const App: React.FC = () => {
         </section>
         <TaskBoard />
       </main>
-      <footer>
-        <p>Политика конфиденциальности</p>
-        <p>Соглашение на обработку персональных данных</p>
+      <footer className='main-footer'>
+      <div className="logo">
+            <img src={logo} alt="BrainStorm Logo" className="logo-image"></img>
+            BrainStorm
+          </div>
+        <p className='footer-text'>Политика конфиденциальности</p>
+        <p className='footer-text'>Соглашение на обработку персональных данных</p>
       </footer>
     </div>
   );
